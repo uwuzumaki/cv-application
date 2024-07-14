@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import "../Styles/Person.css";
+import { Input } from "./Helper";
 
 const Person = () => {
   const [person, setPerson] = useState({});
@@ -67,13 +67,5 @@ const Person = () => {
     </form>
   );
 };
-
-function Input({ label, name, value, onChange }) {
-  return (
-    <label>
-      {label} <input name={name} value={value} onChange={onChange}></input>
-    </label>
-  );
-}
 
 export default Person;
