@@ -1,6 +1,7 @@
 import "../Styles/App.css";
 import Education from "./Education";
 import Person from "./Person";
+import Work from "./Work";
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <h1>Hello World</h1>
       <Person />
       <Education />
+      <Work />
     </>
   );
 };

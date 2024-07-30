@@ -8,13 +8,6 @@ const Education = () => {
   const [schoolName, setSchoolName] = useState("");
   const [years, setYears] = useState("");
 
-  //   const handleChange2 = (e) => {
-  //     const key = e.target.name;
-  //     const value = e.target.value;
-  //     setSchools((prevSchool) => ({ ...prevSchool, [key]: value }));
-  //     console.log(schools);
-  //   };
-
   const handleDegreeChange = (e) => {
     setDegree(e.target.value);
   };
@@ -47,7 +40,7 @@ const Education = () => {
         onChange={handleDegreeChange}
       />
       <Input
-        label="schoolName"
+        label="School Name"
         name="schoolName"
         value={schoolName}
         onChange={handleNameChange}
