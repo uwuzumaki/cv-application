@@ -1,16 +1,8 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
 import "../Styles/Person.css";
 import { Input } from "./Helper";
 
-const Person = () => {
-  const [person, setPerson] = useState({});
-
-  const handleChange = (e) => {
-    const key = e.target.name;
-    const value = e.target.value;
-    setPerson((prevPerson) => ({ ...prevPerson, [key]: value }));
-  };
-
+const Person = ({ person, handleChange }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(person);
