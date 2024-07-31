@@ -41,6 +41,33 @@ const App = () => {
     console.log(schools);
   };
 
+  const [jobs, setJobs] = useState([]);
+  const [position, setPosition] = useState("");
+  const [company, setCompany] = useState("");
+  const [dates, setDates] = useState("");
+
+  const handlePositionChange = (e) => {
+    setPosition(e.target.value);
+  };
+  const handleCompanyChange = (e) => {
+    setCompany(e.target.value);
+  };
+
+  const handleDatesChange = (e) => {
+    setDates(e.target.value);
+  };
+
+  const handleSubmit2 = (e) => {
+    e.preventDefault();
+    const newJob = {
+      position,
+      company,
+      dates,
+    };
+    setJobs((prevJobs) => [...prevJobs, newJob]);
+    console.log(jobs);
+  };
+
   return (
     <>
       <h1>Hello World</h1>
@@ -54,7 +81,16 @@ const App = () => {
         handleYearsChange={handleYearsChange}
         handleSubmit={handleSubmit}
       />
-      <Work />
+      <Work
+        jobs={jobs}
+        position={position}
+        company={company}
+        dates={dates}
+        handlePositionChange={handlePositionChange}
+        handleCompanyChange={handleCompanyChange}
+        handleDatesChange={handleDatesChange}
+        handleSubmit={handleSubmit2}
+      />
     </>
   );
 };
