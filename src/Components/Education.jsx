@@ -1,36 +1,16 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
 import "../Styles/Education.css";
 import { Input } from "./Helper";
 
-const Education = () => {
-  const [schools, setSchools] = useState([]);
-  const [degree, setDegree] = useState("");
-  const [schoolName, setSchoolName] = useState("");
-  const [years, setYears] = useState("");
-
-  const handleDegreeChange = (e) => {
-    setDegree(e.target.value);
-  };
-
-  const handleNameChange = (e) => {
-    setSchoolName(e.target.value);
-  };
-
-  const handleYearsChange = (e) => {
-    setYears(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newSchool = {
-      degree,
-      schoolName,
-      years,
-    };
-    setSchools((prevSchools) => [...prevSchools, newSchool]);
-    console.log(schools);
-  };
-
+const Education = ({
+  degree,
+  schoolName,
+  years,
+  handleDegreeChange,
+  handleNameChange,
+  handleYearsChange,
+  handleSubmit,
+}) => {
   return (
     <form id="education">
       <Input
