@@ -38,6 +38,7 @@ const App = () => {
       years,
     };
     setSchools((prevSchools) => [...prevSchools, newSchool]);
+
     console.log(schools);
   };
 
@@ -91,6 +92,28 @@ const App = () => {
         handleDatesChange={handleDatesChange}
         handleSubmit={handleSubmit2}
       />
+      <div>
+        <div>
+          Person: {person.first} {person.last} {person.phone} {person.email}{" "}
+          {person.city} {person.state} {person.postalcode}
+        </div>
+        <div>
+          Education:{" "}
+          {schools.map((school, index) => (
+            <li key={index}>
+              {school.degree} {school.schoolName} {school.years}
+            </li>
+          ))}
+        </div>
+        <div>
+          Work experience:{" "}
+          {jobs.map((job, index) => (
+            <li key={index}>
+              {job.position} {job.company} {job.dates}
+            </li>
+          ))}
+        </div>
+      </div>
     </>
   );
 };
