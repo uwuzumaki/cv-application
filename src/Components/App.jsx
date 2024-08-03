@@ -122,7 +122,7 @@ const App = () => {
             <>
               <li key={school.id} id={school.id} data-section="school">
                 {school.degree} {school.schoolName} {school.years}
-                <button onClick={deleteC}>123</button>
+                <button onClick={deleteC}>Delete</button>
               </li>
             </>
           ))}
@@ -133,7 +133,7 @@ const App = () => {
             <>
               <li key={job.id} id={job.id} data-section="work">
                 {job.position} {job.company} {job.dates}
-                <button onClick={deleteC}>456</button>
+                <button onClick={deleteC}>Delete</button>
               </li>
             </>
           ))}
