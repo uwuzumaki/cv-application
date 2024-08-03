@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import "../Styles/Education.css";
-import { Input } from "./Helper";
+import { Input } from "./HelperComp";
 
 const Education = ({
   degree,

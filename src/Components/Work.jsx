@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import "../Styles/Work.css";
-import { Input } from "./Helper";
+import { Input } from "./HelperComp";
 
 const Work = ({
   position,

@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import "../Styles/App.css";
 import Education from "./Education";
 import Person from "./Person";
 import Work from "./Work";
+// import { deleteCard } from "./HelperFunc";
 
 const App = () => {
   const [person, setPerson] = useState({});
@@ -33,6 +35,7 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newSchool = {
+      id: uuidv4(),
       degree,
       schoolName,
       years,
@@ -61,12 +64,28 @@ const App = () => {
   const handleSubmit2 = (e) => {
     e.preventDefault();
     const newJob = {
+      id: uuidv4(),
       position,
       company,
       dates,
     };
     setJobs((prevJobs) => [...prevJobs, newJob]);
     console.log(jobs);
+  };
+
+  const deleteC = (e) => {
+    console.log(e.target.parentNode.id);
+    const card = e.target.parentNode.dataset.section;
+    if (card == "school") {
+      setSchools((prevData) =>
+        prevData.filter((data) => data.id != e.target.parentNode.id)
+      );
+    }
+    if (card == "work") {
+      setJobs((prevData) =>
+        prevData.filter((data) => data.id != e.target.parentNode.id)
+      );
+    }
   };
 
   return (
@@ -97,20 +116,26 @@ const App = () => {
           Person: {person.first} {person.last} {person.phone} {person.email}{" "}
           {person.city} {person.state} {person.postalcode}
         </div>
-        <div>
+        <div id="schoolList">
           Education:{" "}
-          {schools.map((school, index) => (
-            <li key={index}>
-              {school.degree} {school.schoolName} {school.years}
-            </li>
+          {schools.map((school) => (
+            <>
+              <li key={school.id} id={school.id} data-section="school">
+                {school.degree} {school.schoolName} {school.years}
+                <button onClick={deleteC}>123</button>
+              </li>
+            </>
           ))}
         </div>
-        <div>
+        <div id="workList">
           Work experience:{" "}
-          {jobs.map((job, index) => (
-            <li key={index}>
-              {job.position} {job.company} {job.dates}
-            </li>
+          {jobs.map((job) => (
+            <>
+              <li key={job.id} id={job.id} data-section="work">
+                {job.position} {job.company} {job.dates}
+                <button onClick={deleteC}>456</button>
+              </li>
+            </>
           ))}
         </div>
       </div>

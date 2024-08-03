@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import "../Styles/Person.css";
-import { Input } from "./Helper";
+import { Input } from "./HelperComp";
 
 const Person = ({ person, handleChange }) => {
   const handleSubmit = (e) => {
