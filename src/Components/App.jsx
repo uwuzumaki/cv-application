@@ -128,14 +128,13 @@ const App = () => {
     }
   };
 
-  const deleteC = (e) => {
-    const card = e.target.parentNode.dataset.section;
-    if (card == "school") {
+  const deleteC = (section, e) => {
+    if (section == "school") {
       setSchools((prevData) =>
         prevData.filter((data) => data.id != e.target.parentNode.id)
       );
     }
-    if (card == "work") {
+    if (section == "work") {
       setJobs((prevData) =>
         prevData.filter((data) => data.id != e.target.parentNode.id)
       );
@@ -144,7 +143,6 @@ const App = () => {
 
   return (
     <>
-      <h1>Hello World</h1>
       <Person person={person} handleChange={handlePersonChange} />
       <Education
         degree={degree}
@@ -177,7 +175,7 @@ const App = () => {
               <li key={school.id} id={school.id} data-section="school">
                 {school.degree} {school.schoolName} {school.years}
                 <button onClick={(e) => editC("school", e)}>Edit</button>
-                <button onClick={deleteC}>Delete</button>
+                <button onClick={(e) => deleteC("school", e)}>Delete</button>
               </li>
             </>
           ))}
