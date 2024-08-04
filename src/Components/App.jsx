@@ -82,14 +82,15 @@ const App = () => {
     const sectionID = e.target.parentNode.id;
     if (section == "school") {
       const card = schools.filter((school) => school.id == sectionID);
-      console.log(...card);
-      setDegree(...card.degree);
-      setSchoolName(...card.schoolName);
-      setYears(...card.years);
+      setDegree(card[0].degree);
+      setSchoolName(card[0].schoolName);
+      setYears(card[0].years);
     }
     if (section == "work") {
       const card = jobs.filter((school) => school.id == sectionID);
-      console.log(card);
+      setPosition(card[0].position);
+      setCompany(card[0].company);
+      setDates(card[0].dates);
     }
   };
 
