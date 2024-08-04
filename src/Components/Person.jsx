@@ -3,11 +3,6 @@ import "../Styles/Person.css";
 import { Input } from "./HelperComp";
 
 const Person = ({ person, handleChange }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(person);
-  };
-
   return (
     <form id="person">
       <Input
@@ -53,9 +48,6 @@ const Person = ({ person, handleChange }) => {
         value={person.postalcode}
         onChange={handleChange}
       />
-      <button type="submit" value="Submit" onClick={handleSubmit}>
-        Go!
-      </button>
     </form>
   );
 };

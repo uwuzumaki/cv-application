@@ -163,7 +163,7 @@ const App = () => {
         handleDatesChange={handleDatesChange}
         handleSubmit={handleSubmit2}
       />
-      <div>
+      <div id="displayP">
         <div>
           Person: {person.first} {person.last} {person.phone} {person.email}{" "}
           {person.city} {person.state} {person.postalcode}
