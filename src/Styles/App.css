@@ -10,20 +10,6 @@ body {
   grid-row-gap: 10px;
 }
 
-#education {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 3;
-  grid-row-end: 4;
-}
-
-#work {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 4;
-  grid-row-end: 5;
-}
-
 #displayP {
   grid-column-start: 2;
   grid-column-end: 5;
