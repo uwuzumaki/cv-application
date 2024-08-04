@@ -19,6 +19,7 @@ const App = () => {
   const [degree, setDegree] = useState("");
   const [schoolName, setSchoolName] = useState("");
   const [years, setYears] = useState("");
+  const [editSchoolID, setEditSchoolID] = useState("");
 
   const handleDegreeChange = (e) => {
     setDegree(e.target.value);
@@ -34,16 +35,32 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newSchool = {
-      id: uuidv4(),
-      degree,
-      schoolName,
-      years,
-    };
-    setSchools((prevSchools) => [...prevSchools, newSchool]);
+    if (editSchoolID == "") {
+      const newSchool = {
+        id: uuidv4(),
+        degree,
+        schoolName,
+        years,
+      };
+      setSchools((prevSchools) => [...prevSchools, newSchool]);
+    }
+    if (editSchoolID != "") {
+      const oldSchool = {
+        id: editSchoolID,
+        degree,
+        schoolName,
+        years,
+      };
+      setSchools((prevSchools) =>
+        prevSchools.map((school) =>
+          oldSchool.id === school.id ? oldSchool : school
+        )
+      );
+    }
     setDegree("");
     setSchoolName("");
     setYears("");
+    setEditSchoolID("");
     console.log(schools);
   };
 
@@ -51,6 +68,7 @@ const App = () => {
   const [position, setPosition] = useState("");
   const [company, setCompany] = useState("");
   const [dates, setDates] = useState("");
+  const [editJobID, setEditJobID] = useState("");
 
   const handlePositionChange = (e) => {
     setPosition(e.target.value);
@@ -65,16 +83,30 @@ const App = () => {
 
   const handleSubmit2 = (e) => {
     e.preventDefault();
-    const newJob = {
-      id: uuidv4(),
-      position,
-      company,
-      dates,
-    };
-    setJobs((prevJobs) => [...prevJobs, newJob]);
+    if (editJobID == "") {
+      const newJob = {
+        id: uuidv4(),
+        position,
+        company,
+        dates,
+      };
+      setJobs((prevJobs) => [...prevJobs, newJob]);
+    }
+    if (editJobID != "") {
+      const oldJob = {
+        id: editJobID,
+        position,
+        company,
+        dates,
+      };
+      setJobs((prevJobs) =>
+        prevJobs.map((job) => (oldJob.id === job.id ? oldJob : job))
+      );
+    }
     setPosition("");
     setCompany("");
     setDates("");
+    setEditJobID("");
     console.log(jobs);
   };
 
@@ -85,12 +117,14 @@ const App = () => {
       setDegree(card[0].degree);
       setSchoolName(card[0].schoolName);
       setYears(card[0].years);
+      setEditSchoolID(card[0].id);
     }
     if (section == "work") {
       const card = jobs.filter((school) => school.id == sectionID);
       setPosition(card[0].position);
       setCompany(card[0].company);
       setDates(card[0].dates);
+      setEditJobID(card[0].id);
     }
   };
 
