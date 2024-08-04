@@ -41,7 +41,9 @@ const App = () => {
       years,
     };
     setSchools((prevSchools) => [...prevSchools, newSchool]);
-
+    setDegree("");
+    setSchoolName("");
+    setYears("");
     console.log(schools);
   };
 
@@ -70,11 +72,28 @@ const App = () => {
       dates,
     };
     setJobs((prevJobs) => [...prevJobs, newJob]);
+    setPosition("");
+    setCompany("");
+    setDates("");
     console.log(jobs);
   };
 
+  const editC = (section, e) => {
+    const sectionID = e.target.parentNode.id;
+    if (section == "school") {
+      const card = schools.filter((school) => school.id == sectionID);
+      console.log(...card);
+      setDegree(...card.degree);
+      setSchoolName(...card.schoolName);
+      setYears(...card.years);
+    }
+    if (section == "work") {
+      const card = jobs.filter((school) => school.id == sectionID);
+      console.log(card);
+    }
+  };
+
   const deleteC = (e) => {
-    console.log(e.target.parentNode.id);
     const card = e.target.parentNode.dataset.section;
     if (card == "school") {
       setSchools((prevData) =>
@@ -122,6 +141,7 @@ const App = () => {
             <>
               <li key={school.id} id={school.id} data-section="school">
                 {school.degree} {school.schoolName} {school.years}
+                <button onClick={(e) => editC("school", e)}>Edit</button>
                 <button onClick={deleteC}>Delete</button>
               </li>
             </>
@@ -133,6 +153,7 @@ const App = () => {
             <>
               <li key={job.id} id={job.id} data-section="work">
                 {job.position} {job.company} {job.dates}
+                <button onClick={(e) => editC("work", e)}>Edit</button>
                 <button onClick={deleteC}>Delete</button>
               </li>
             </>
