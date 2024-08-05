@@ -174,11 +174,16 @@ const App = () => {
           </div>
         </div>
         <div id="schoolList">
-          Education:{" "}
+          <span>Education</span>
           {schools.map((school) => (
             <>
               <li key={school.id} id={school.id} data-section="school">
-                {school.degree} {school.schoolName} {school.years}
+                <span>{school.degree}</span>
+                <br />
+                <span>{school.schoolName}</span>
+                <br />
+                <span>{school.years}</span>
+                <br />
                 <button onClick={(e) => editC("school", e)}>Edit</button>
                 <button onClick={(e) => deleteC("school", e)}>Delete</button>
               </li>
@@ -186,11 +191,14 @@ const App = () => {
           ))}
         </div>
         <div id="workList">
-          Work experience:{" "}
+          <span>Work Experience</span>
           {jobs.map((job) => (
             <>
               <li key={job.id} id={job.id} data-section="work">
-                {job.position} {job.company} {job.dates}
+                <span>{job.position}</span>
+                <br /> <span>{job.company}</span>
+                <br /> <span>{job.dates}</span>
+                <br />
                 <button onClick={(e) => editC("work", e)}>Edit</button>
                 <button onClick={deleteC}>Delete</button>
               </li>

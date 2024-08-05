@@ -1,5 +1,6 @@
 body {
   background-color: grey;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #root {
@@ -15,30 +16,71 @@ body {
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 4;
+  background-color: white;
 
   display: flex;
   flex-direction: column;
 }
 
 #displayP > div > li {
-  border: black solid 1px;
+  list-style-type: none;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 #personList {
-  border: black solid 1px;
-
   flex: 1;
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  padding-bottom: 1rem;
+}
+
+#personList > div {
+  margin: 1rem 0 0 0;
+  padding: 1rem 0 0 0;
+}
+
+#personList > :first-child {
+  padding: 0rem;
+  font-size: 2rem;
 }
 
 #schoolList {
-  border: black solid 1px;
   flex: 1;
 }
 
+#schoolList > span {
+  margin: 1em;
+  font-size: 1.5rem;
+  color: #a54d4d;
+}
+
+#schoolList > li > :first-child {
+  font-size: 1.3rem;
+  font-style: bold;
+}
+
+#schoolList > li > span:nth-of-type(3) {
+  font-style: italic;
+}
+
 #workList {
-  border: black solid 1px;
   flex: 1;
+}
+
+#workList > Span {
+  margin: 1em;
+  font-size: 1.5rem;
+  color: #a54d4d;
+}
+
+#workList > li > :first-child {
+  font-size: 1.3rem;
+  font-style: bold;
+}
+
+#workList > li > span:nth-of-type(3) {
+  font-style: italic;
 }

@@ -18,19 +18,6 @@ const Person = ({ person, handleChange }) => {
         onChange={handleChange}
       />
       <Input
-        label="phone"
-        name="phone"
-        value={person.phone}
-        pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
-        onChange={handleChange}
-      />
-      <Input
-        label="email"
-        name="email"
-        value={person.email}
-        onChange={handleChange}
-      />
-      <Input
         label="city"
         name="city"
         value={person.city}
@@ -46,6 +33,19 @@ const Person = ({ person, handleChange }) => {
         label="postalcode"
         name="postalcode"
         value={person.postalcode}
+        onChange={handleChange}
+      />
+      <Input
+        label="phone"
+        name="phone"
+        value={person.phone}
+        pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+        onChange={handleChange}
+      />
+      <Input
+        label="email"
+        name="email"
+        value={person.email}
         onChange={handleChange}
       />
     </form>
