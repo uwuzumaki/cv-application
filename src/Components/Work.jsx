@@ -14,25 +14,25 @@ const Work = ({
   return (
     <form id="work">
       <Input
-        label="position"
+        label="Position:"
         name="position"
         value={position}
         onChange={handlePositionChange}
       />
       <Input
-        label="company"
+        label="Company:"
         name="company"
         value={company}
         onChange={handleCompanyChange}
       />
       <Input
-        label="dates"
+        label="Dates:"
         name="dates"
         value={dates}
         onChange={handleDatesChange}
       />
       <button type="submit" onClick={handleSubmit}>
-        Go3!
+        Add
       </button>
     </form>
   );

@@ -1,8 +1,12 @@
 #work {
   grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-end: 4;
   grid-row-start: 4;
   grid-row-end: 5;
+
+  display: flex;
+  flex-direction: column;
+  margin-right: 25%;
 }
 #work > div {
   display: flex;
@@ -12,11 +16,15 @@
   display: flex;
   align-items: end;
   justify-content: end;
-  width: 25%;
-  margin-bottom: 10px;
+  width: 40%;
 }
 
 #work > div > input {
   width: 60%;
   margin-left: 10px;
+}
+
+#work > button {
+  width: 5rem;
+  align-self: flex-end;
 }

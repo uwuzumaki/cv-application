@@ -14,25 +14,25 @@ const Education = ({
   return (
     <form id="education">
       <Input
-        label="degree"
+        label="Degree:"
         name="degree"
         value={degree}
         onChange={handleDegreeChange}
       />
       <Input
-        label="School Name"
+        label="School Name:"
         name="schoolName"
         value={schoolName}
         onChange={handleNameChange}
       />
       <Input
-        label="years"
+        label="Years Attended:"
         name="years"
         value={years}
         onChange={handleYearsChange}
       />
       <button type="submit" onClick={handleSubmit}>
-        Go2!
+        Add
       </button>
     </form>
   );

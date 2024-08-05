@@ -6,44 +6,44 @@ const Person = ({ person, handleChange }) => {
   return (
     <form id="person">
       <Input
-        label="first"
+        label="First Name:"
         name="first"
         value={person.first}
         onChange={handleChange}
       />
       <Input
-        label="last"
+        label="Last Name:"
         name="last"
         value={person.last}
         onChange={handleChange}
       />
       <Input
-        label="city"
+        label="City:"
         name="city"
         value={person.city}
         onChange={handleChange}
       />
       <Input
-        label="state"
+        label="State:"
         name="state"
         value={person.state}
         onChange={handleChange}
       />
       <Input
-        label="postalcode"
+        label="Postal Code:"
         name="postalcode"
         value={person.postalcode}
         onChange={handleChange}
       />
       <Input
-        label="phone"
+        label="Phone Number"
         name="phone"
         value={person.phone}
         pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
         onChange={handleChange}
       />
       <Input
-        label="email"
+        label="Email:"
         name="email"
         value={person.email}
         onChange={handleChange}

@@ -1,8 +1,12 @@
 #education {
   grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-end: 4;
   grid-row-start: 3;
   grid-row-end: 4;
+
+  display: flex;
+  flex-direction: column;
+  margin-right: 25%;
 }
 
 #education > div {
@@ -13,11 +17,15 @@
   display: flex;
   align-items: end;
   justify-content: end;
-  width: 25%;
-  margin-bottom: 10px;
+  width: 40%;
 }
 
 #education > div > input {
   width: 60%;
   margin-left: 10px;
+}
+
+#education > button {
+  width: 5rem;
+  align-self: flex-end;
 }
