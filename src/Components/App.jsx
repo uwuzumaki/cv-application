@@ -4,7 +4,6 @@ import "../Styles/App.css";
 import Education from "./Education";
 import Person from "./Person";
 import Work from "./Work";
-// import { deleteCard } from "./HelperFunc";
 
 const App = () => {
   const [person, setPerson] = useState({});
@@ -61,7 +60,6 @@ const App = () => {
     setSchoolName("");
     setYears("");
     setEditSchoolID("");
-    console.log(schools);
   };
 
   const [jobs, setJobs] = useState([]);
@@ -107,7 +105,6 @@ const App = () => {
     setCompany("");
     setDates("");
     setEditJobID("");
-    console.log(jobs);
   };
 
   const editC = (section, e) => {
@@ -164,9 +161,17 @@ const App = () => {
         handleSubmit={handleSubmit2}
       />
       <div id="displayP">
-        <div>
-          Person: {person.first} {person.last} {person.phone} {person.email}{" "}
-          {person.city} {person.state} {person.postalcode}
+        <div id="personList">
+          <div>
+            {" "}
+            {person.first} {person.last}
+          </div>
+          <div>
+            {person.city} {person.state} {person.postalcode}
+          </div>
+          <div>
+            {person.phone} {person.email}
+          </div>
         </div>
         <div id="schoolList">
           Education:{" "}

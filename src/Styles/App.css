@@ -15,4 +15,30 @@ body {
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 4;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#displayP > div > li {
+  border: black solid 1px;
+}
+
+#personList {
+  border: black solid 1px;
+
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#schoolList {
+  border: black solid 1px;
+  flex: 1;
+}
+
+#workList {
+  border: black solid 1px;
+  flex: 1;
 }
