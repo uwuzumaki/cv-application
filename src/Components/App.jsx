@@ -126,7 +126,7 @@ const App = () => {
       setEditSchoolID(card[0].id);
     }
     if (section == "work") {
-      const card = jobs.filter((school) => school.id == sectionID);
+      const card = jobs.filter((work) => work.id == sectionID);
       setPosition(card[0].position);
       setCompany(card[0].company);
       setDates(card[0].dates);
@@ -209,7 +209,7 @@ const App = () => {
                 <br /> <span>{job.dates}</span>
                 <br />
                 <button onClick={(e) => editC("work", e)}>Edit</button>
-                <button onClick={deleteC}>Delete</button>
+                <button onClick={(e) => deleteC("work", e)}>Delete</button>
               </li>
             </>
           ))}
