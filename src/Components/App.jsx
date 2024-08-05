@@ -6,7 +6,16 @@ import Person from "./Person";
 import Work from "./Work";
 
 const App = () => {
-  const [person, setPerson] = useState({});
+  const initPerson = {
+    first: "",
+    last: "",
+    city: "",
+    state: "",
+    postalcode: "",
+    phone: "",
+    email: "",
+  };
+  const [person, setPerson] = useState(initPerson);
 
   const handlePersonChange = (e) => {
     const key = e.target.name;
