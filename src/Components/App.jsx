@@ -185,33 +185,29 @@ const App = () => {
         <div id="schoolList">
           <span>Education</span>
           {schools.map((school) => (
-            <>
-              <li key={school.id} id={school.id} data-section="school">
-                <span>{school.degree}</span>
-                <br />
-                <span>{school.schoolName}</span>
-                <br />
-                <span>{school.years}</span>
-                <br />
-                <button onClick={(e) => editC("school", e)}>Edit</button>
-                <button onClick={(e) => deleteC("school", e)}>Delete</button>
-              </li>
-            </>
+            <li key={school.id} id={school.id} data-section="school">
+              <span>{school.degree}</span>
+              <br />
+              <span>{school.schoolName}</span>
+              <br />
+              <span>{school.years}</span>
+              <br />
+              <button onClick={(e) => editC("school", e)}>Edit</button>
+              <button onClick={(e) => deleteC("school", e)}>Delete</button>
+            </li>
           ))}
         </div>
         <div id="workList">
           <span>Work Experience</span>
           {jobs.map((job) => (
-            <>
-              <li key={job.id} id={job.id} data-section="work">
-                <span>{job.position}</span>
-                <br /> <span>{job.company}</span>
-                <br /> <span>{job.dates}</span>
-                <br />
-                <button onClick={(e) => editC("work", e)}>Edit</button>
-                <button onClick={(e) => deleteC("work", e)}>Delete</button>
-              </li>
-            </>
+            <li key={job.id} id={job.id} data-section="work">
+              <span>{job.position}</span>
+              <br /> <span>{job.company}</span>
+              <br /> <span>{job.dates}</span>
+              <br />
+              <button onClick={(e) => editC("work", e)}>Edit</button>
+              <button onClick={(e) => deleteC("work", e)}>Delete</button>
+            </li>
           ))}
         </div>
       </div>
